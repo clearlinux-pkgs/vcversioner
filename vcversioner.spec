@@ -6,9 +6,9 @@
 #
 Name     : vcversioner
 Version  : 2.16.0.0
-Release  : 2
-URL      : https://pypi.python.org/packages/c5/cc/33162c0a7b28a4d8c83da07bc2b12cee58c120b4a9e8bba31c41c8d35a16/vcversioner-2.16.0.0.tar.gz
-Source0  : https://pypi.python.org/packages/c5/cc/33162c0a7b28a4d8c83da07bc2b12cee58c120b4a9e8bba31c41c8d35a16/vcversioner-2.16.0.0.tar.gz
+Release  : 3
+URL      : http://pypi.debian.net/vcversioner/vcversioner-2.16.0.0.tar.gz
+Source0  : http://pypi.debian.net/vcversioner/vcversioner-2.16.0.0.tar.gz
 Source99 : https://pypi.python.org/packages/c5/cc/33162c0a7b28a4d8c83da07bc2b12cee58c120b4a9e8bba31c41c8d35a16/vcversioner-2.16.0.0.tar.gz.asc
 Summary  : Use version control tags to discover version numbers
 Group    : Development/Tools
@@ -21,10 +21,9 @@ BuildRequires : python3-dev
 BuildRequires : setuptools
 
 %description
-.. image:: https://travis-ci.org/habnabit/vcversioner.png
 ===========
-vcversioner
-===========
+        vcversioner
+        ===========
 
 %package python
 Summary: python components for the vcversioner package.
@@ -38,20 +37,27 @@ python components for the vcversioner package.
 %setup -q -n vcversioner-2.16.0.0
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1487856890
+export SOURCE_DATE_EPOCH=1503082633
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1487856890
+export SOURCE_DATE_EPOCH=1503082633
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python*/*
+/usr/lib/python2*/*
+/usr/lib/python3*/*
