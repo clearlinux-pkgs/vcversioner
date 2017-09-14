@@ -1,6 +1,6 @@
 # This file contains recursive sources that require this package
-jsonschema-0:2.6.0-21.src
-jupyter-0:1.0.0-7.src
-jupyter-notebook-gist-0:0.4.0-5.src
-nbformat-0:4.4.0-7.src
-notebook-0:5.0.0-6.src
+jsonschema
+jupyter
+jupyter-notebook-gist
+nbformat
+notebook

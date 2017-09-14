@@ -6,7 +6,7 @@
 #
 Name     : vcversioner
 Version  : 2.16.0.0
-Release  : 4
+Release  : 5
 URL      : http://pypi.debian.net/vcversioner/vcversioner-2.16.0.0.tar.gz
 Source0  : http://pypi.debian.net/vcversioner/vcversioner-2.16.0.0.tar.gz
 Source99 : http://pypi.debian.net/vcversioner/vcversioner-2.16.0.0.tar.gz.asc
@@ -51,12 +51,12 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1505073253
+export SOURCE_DATE_EPOCH=1505366768
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1505073253
+export SOURCE_DATE_EPOCH=1505366768
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
