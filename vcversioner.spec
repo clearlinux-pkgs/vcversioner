@@ -17,7 +17,7 @@ Requires: vcversioner-python3
 Requires: vcversioner-python
 BuildRequires : pbr
 BuildRequires : pip
-BuildRequires : python-dev
+
 BuildRequires : python3-dev
 BuildRequires : setuptools
 
