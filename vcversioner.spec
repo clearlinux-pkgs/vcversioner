@@ -6,7 +6,7 @@
 #
 Name     : vcversioner
 Version  : 2.16.0.0
-Release  : 19
+Release  : 20
 URL      : http://pypi.debian.net/vcversioner/vcversioner-2.16.0.0.tar.gz
 Source0  : http://pypi.debian.net/vcversioner/vcversioner-2.16.0.0.tar.gz
 Source99 : http://pypi.debian.net/vcversioner/vcversioner-2.16.0.0.tar.gz.asc
