@@ -1,9 +1,2 @@
 # This file contains recursive sources that require this package
-jsonschema
-jupyter
-jupyter-notebook-gist
-jupyterlab
-jupyterlab_launcher
-nbformat
-nbsphinx
-notebook
+pyee
